@@ -1,0 +1,25 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=87:E2:58:62:B9:84:F4:EA:22:5E:B0:3A:DE:70:7B:88:92:BC:69:24%3Bcom.taxi_riderapplication
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.taxi_riderapplication
+
+    SHA-1 certificate fingerprint:
+    87:E2:58:62:B9:84:F4:EA:22:5E:B0:3A:DE:70:7B:88:92:BC:69:24
+
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDe77I99Iur7eo4RH2NsemTxXNsKl5PYlk</string>
+</resources>
