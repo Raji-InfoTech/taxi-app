@@ -14,4 +14,6 @@
     <string name="title_activity_home_screen">HomeScreen</string>
     <string name="title_activity_maps">Map</string>
     <string name="permission_require">Location permission require</string>
+    <string name="drivers_not_found">Drivers not Found!</string>
+    <string name="Not_found_key">Not Found driver with key</string>
 </resources>

@@ -2,6 +2,7 @@ package com.taxi_riderapplication;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.chaos.view.PinView;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -25,6 +28,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.taxi_riderapplication.Utils.UserUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -128,6 +134,13 @@ public class OTP_verifyform extends AppCompatActivity {
 
     private void sendToMain(){
         addDatatoFirebase (name,mblnumber);
+        FirebaseInstanceId.getInstance ().getInstanceId ()
+                .addOnFailureListener (e -> Toast.makeText (OTP_verifyform.this, e.getMessage (), Toast.LENGTH_SHORT).show ( ))
+                .addOnSuccessListener (instanceIdResult -> {
+                    Log.d ("token",instanceIdResult.getToken () );
+                    UserUtils.UpdateToken (OTP_verifyform.this,instanceIdResult.getToken ());
+                });
+
         finish();
     }
     private void addDatatoFirebase(String name, String phone) {
